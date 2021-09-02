@@ -1,0 +1,54 @@
+-------------------------------REFINEMENT 1-------------------------------------
+// * Ships arrive at queue.
+// * Dock ship.
+// * Move cargo from ship to warehouse.
+// * Move cargo out of warehouse.
+
+-------------------------------REFINEMENT 2-------------------------------------
+// * Ship arrives at queue.
+// ** Generate a random number between 0 and 3.
+// ** Add number of ships arriving to the number currently in the queue.
+// * Dock ship.
+// ** If there is at least one ship in the queue, look for an open pier and dock.
+// * Move cargo from ship to warehouse.
+// ** Iterate through all piers.
+// ** Determine the amount of cargo to move from ship to warehouse.
+// * Move cargo from warehouse to destination.
+// ** Iterate through all piers.
+// ** Subtract WAREHOUSE_UNLOAD_RATE from cargo in warehouse.
+
+-------------------------------REFINEMENT 3-------------------------------------
+// * Ship arrives at queue.
+// ** Generate a random number between 0 and 3.
+// ** Add number of ships arriving to the number currently in the queue.
+// *** If the maximum queue size is met, ignore the incoming ships.
+// * Dock ship.
+// ** Iterate through each pier until an open one is found, if found, assign cargo to port.
+// *** If there is at least one ship in the queue, look for an open pier and dock.
+// * Move cargo from ship to warehouse.
+// ** Iterate through all piers.
+// ** Determine the amount of cargo to move from ship to warehouse.
+// *** Determine the minimum of space in warehouse, cargo on ship, and unload rate.
+// *** Subtract this from cargo on ship and add to cargo in warehouse.
+// * Move cargo from warehouse to destination.
+// ** Iterate through all piers.
+// ** Subtract WAREHOUSE_UNLOAD_RATE from cargo in warehouse.
+
+-------------------------------REFINEMENT 4-------------------------------------
+// * Ship arrives at queue.
+// ** Generate a random number between 0 and 3.
+// ** Add number of ships arriving to the number currently in the queue.
+// *** If the maximum queue size is met, ignore the incoming ships.
+// * Dock ship.
+// ** Iterate through each pier until an open one is found, if found, assign cargo to port.
+// *** If there is at least one ship in the queue, look for an open pier and dock.
+// **** Generate a random number between 100 and 500 for each cargo type.
+// **** Decrement queue size by 1.
+// * Move cargo from ship to warehouse.
+// ** Iterate through all piers.
+// ** Determine the amount of cargo to move from ship to warehouse.
+// *** Determine the minimum of space in warehouse, cargo on ship, and unload rate.
+// *** Subtract this from cargo on ship and add to cargo in warehouse.
+// * Move cargo from warehouse to destination.
+// ** Iterate through all piers.
+// ** Subtract WAREHOUSE_UNLOAD_RATE from cargo in warehouse.
